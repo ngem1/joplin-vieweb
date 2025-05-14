@@ -1,7 +1,7 @@
 version: '3.4'
 
 x-common-variables: &common-variables
-   ORIGINS: "'http://localhost', 'http://192.168.21.1'"
+   ORIGINS: "'http://localhost', 'http://192.168.21.1', 'http://192.168.68.72:8080"
    JOPLIN_LOGIN_REQUIRED: True
 
 services:
@@ -13,7 +13,7 @@ services:
        <<: *common-variables
     restart: unless-stopped
     ports:
-      - <PORT-TO-YOUR-PROXY>:8000
+      - 8080:8000
     volumes:
       - joplin:/root/.config/joplin:ro
       - joplin-vieweb:/root/.config/joplin-vieweb
